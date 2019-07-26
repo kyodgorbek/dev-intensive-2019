@@ -2,43 +2,43 @@ package ru.skillbranch.devintensive.models
 
 import java.util.*
 
+
+
 abstract class BaseMessage (
 
-    val id : String,
+    val id: String,
 
-    val from : User?,
+    val from: User?,
 
-    val chat : Chat,
+    val chat: Chat,
 
-    val isIncoming : Boolean = false,
+    val isIncoming: Boolean = false,
 
     val date : Date = Date()
 
-){
+) {
 
 
 
-    abstract fun formatMessage() : String
+    abstract fun formatMessage(): String
 
 
 
-    companion object AbstractFactory {
+    companion object AbstractFactory{
 
-        var lastId = -1
+        var lastId = 0
 
-        fun makeMessage(from: User?, chat: Chat, date: Date = Date(),
+        fun makeMessage(from: User?, chat: Chat, date: Date = Date(), type:String = "text", payload: Any, isIncoming: Boolean = false):BaseMessage{
 
-                        type: String = "text", payload: Any?, isIncoming: Boolean = false) : BaseMessage{
+            return when(type){
 
-            lastId++
+                "image"-> ImageMessage("${lastId++}", from, chat, date = date, image = payload as String, isIncoming = isIncoming)
 
-            return when(type) {
+                "text" -> TextMessage("${lastId++}", from, chat, date = date, text = payload as String, isIncoming = isIncoming)
 
-                "image" -> ImageMessage("$lastId", from, chat, isIncoming, date, payload as String?)
 
-                "text" -> TextMessage("$lastId", from, chat, isIncoming, date, payload as String?)
 
-                else -> throw IllegalStateException("Unchecked message type")
+                else-> if ("image" == payload || "text" == payload) makeMessage(from, chat, date, payload, type, isIncoming) else throw IllegalArgumentException()
 
             }
 

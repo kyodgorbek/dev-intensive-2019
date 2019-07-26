@@ -9,7 +9,9 @@ import android.graphics.Rect
 import android.view.View
 
 import android.view.inputmethod.InputMethodManager
-import kotlin.math.roundToLong
+
+import ru.skillbranch.devintensive.utils.Utils.convertDpToPx
+
 
 
 fun Activity.hideKeyboard(){
@@ -18,11 +20,9 @@ fun Activity.hideKeyboard(){
 
     focus?.let {
 
-        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.let {
+        (getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)?.
 
-            it.hideSoftInputFromWindow(focus.windowToken, 0)
-
-        }
+            hideSoftInputFromWindow(focus.windowToken, 0)
 
     }
 
@@ -40,7 +40,7 @@ fun Activity.isKeyboardOpen(): Boolean{
 
     val heightDiff = rootView.height - visibleBounds.height()
 
-    val marginOfError = this.convertDpToPx(50F).roundToLong()
+    val marginOfError = convertDpToPx(this, 50)
 
 
 

@@ -1,7 +1,10 @@
 package ru.skillbranch.devintensive.models
 
 import ru.skillbranch.devintensive.utils.Utils
+
 import java.util.*
+
+
 
 data class User (
 
@@ -23,37 +26,21 @@ data class User (
 
 ){
 
+    constructor(id: String, firstName: String?, lastName: String?):this(id, firstName, lastName, null)
+
 
 
     companion object Factory {
 
-        private var lastId : Int = -1
+        private var lastId: Int = 0
 
-        fun makeUser(fullName: String?) : User {
 
-            lastId++
+
+        fun makeUser(fullName: String?): User {
 
             val (firstName, lastName) = Utils.parseFullName(fullName)
 
-            return User(id = "$lastId", firstName = firstName, lastName = lastName, avatar = null)
-
-        }
-
-
-
-        fun makeUser(builder : Builder) : User {
-
-            if (builder.id.all { it.isDigit() })
-
-                lastId = builder.id.toInt()
-
-            else
-
-                lastId++
-
-            return User(builder.id, builder.firstName, builder.lastName, builder.avatar, builder.rating,
-
-                builder.respect, builder.lastVisit, builder.isOnline)
+            return User("${lastId++}", firstName, lastName)
 
         }
 
@@ -61,43 +48,59 @@ data class User (
 
 
 
-    data class Builder (
+    class Builder {
 
-        var id : String = "${Factory.lastId + 1}",
+        var id : String = ""
 
-        var firstName : String? = null,
+        var firstName : String? = null
 
-        var lastName : String? = null,
+        var lastName : String? = null
 
-        var avatar : String? = null,
+        var avatar : String? = null
 
-        var rating : Int = 0,
+        var rating : Int = 0
 
-        var respect : Int = 0,
+        var respect : Int = 0
 
-        var lastVisit : Date? = Date(),
+        var lastVisit : Date? = Date()
 
         var isOnline : Boolean = false
 
-    ){
+
 
         fun id(id: String) = apply { this.id = id }
 
+
+
         fun firstName(firstName: String?) = apply { this.firstName = firstName }
 
-        fun lastName(lastName: String?) = apply { this.lastName = lastName }
 
-        fun avatar(avatar: String?) = apply { this.avatar = avatar }
 
-        fun rating(rating: Int) = apply { this.rating = rating }
+        fun lastName(lastName: String?)= apply { this.lastName = lastName }
 
-        fun respect(respect: Int) = apply { this.respect = respect }
 
-        fun lastVisit(lastVisit: Date?) = apply { this.lastVisit = lastVisit }
 
-        fun isOnline(isOnline: Boolean) = apply { this.isOnline = isOnline }
+        fun avatar(avatar: String?)= apply { this.avatar = avatar }
 
-        fun build() = Factory.makeUser(this)
+
+
+        fun rating(rating: Int)= apply { this.rating = rating }
+
+
+
+        fun respect(respect: Int)= apply { this.respect = respect }
+
+
+
+        fun lastVisit(lastVisit: Date?)= apply { this.lastVisit = lastVisit }
+
+
+
+        fun isOnline(isOnline: Boolean)= apply { this.isOnline = isOnline }
+
+
+
+        fun build() = User(id, firstName, lastName, avatar, rating, respect, lastVisit, isOnline)
 
     }
 

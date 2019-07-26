@@ -1,23 +1,28 @@
 package ru.skillbranch.devintensive.models
-
 import ru.skillbranch.devintensive.extensions.humanizeDiff
+
 import java.util.*
 
-class TextMessage (
 
-    id : String,
+class TextMessage(
 
-    from : User?,
+id: String,
 
-    chat : Chat,
+from: User?,
 
-    isIncoming : Boolean = false,
+chat: Chat,
 
-    date : Date = Date(),
+isIncoming: Boolean = false,
 
-    var text : String?
+date : Date = Date(),
 
-) : BaseMessage(id, from, chat, isIncoming, date){
+var text: String?
+
+
+
+): BaseMessage(id, from, chat, isIncoming, date) {
+
+
 
     override fun formatMessage(): String = "id:$id ${from?.firstName} " +
 

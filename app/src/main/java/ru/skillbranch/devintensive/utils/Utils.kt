@@ -1,96 +1,27 @@
 package ru.skillbranch.devintensive.utils
+import android.content.Context
+
+import java.lang.StringBuilder
+
+import android.util.DisplayMetrics
+
+
+
+
+
+
 
 object Utils {
 
+    fun parseFullName(fullName: String?): Pair<String?, String?>{
+
+        val parts = fullName?.trim()?.split(" ")
+
+        val firstName = parts?.getOrNull(0)?.ifEmpty { null }
+
+        val lastName = parts?.getOrNull(1)?.ifEmpty { null }
 
 
-    private val translitMap: Map<Char, String> = hashMapOf(
-
-        'а' to "a",
-
-        'б' to "b",
-
-        'в' to "v",
-
-        'г' to "g",
-
-        'д' to "d",
-
-        'е' to "e",
-
-        'ё' to "e",
-
-        'ж' to "zh",
-
-        'з' to "z",
-
-        'и' to "i",
-
-        'й' to "i",
-
-        'к' to "k",
-
-        'л' to "l",
-
-        'м' to "m",
-
-        'н' to "n",
-
-        'о' to "o",
-
-        'п' to "p",
-
-        'р' to "r",
-
-        'с' to "s",
-
-        'т' to "t",
-
-        'у' to "u",
-
-        'ф' to "f",
-
-        'х' to "h",
-
-        'ц' to "c",
-
-        'ч' to "ch",
-
-        'ш' to "sh",
-
-        'щ' to "sh'",
-
-        'ъ' to "",
-
-        'ы' to "i",
-
-        'ь' to "",
-
-        'э' to "e",
-
-        'ю' to "yu",
-
-        'я' to "ya"
-
-    )
-
-
-
-    fun parseFullName(fullName: String?) : Pair<String?, String?> {
-
-        val processedString = fullName?.trim()
-
-        if (processedString.isNullOrBlank())
-
-            return null to null
-
-        val parts : List<String>? = processedString.split("\\s+".toRegex())
-
-
-
-        val firstName = parts?.getOrNull(0)
-
-        val lastName = parts?.getOrNull(1)
 
         return firstName to lastName
 
@@ -100,43 +31,157 @@ object Utils {
 
     fun transliteration(payload: String, divider: String = " "): String {
 
-        var processedString = payload.trim()
+        val map = fillTranslitMap()
 
-        val charSet = processedString.toSet()
+        val builder = StringBuilder()
 
-        for (char in charSet) {
 
-            if (translitMap.containsKey(char.toLowerCase())) {
 
-                processedString = if (char.isUpperCase())
+        for (char in payload.trim())
 
-                    processedString.replace("$char".toRegex(), translitMap.getValue(char.toLowerCase()).capitalize())
+            builder.append(getTranslChar(char, map))
 
-                else
 
-                    processedString.replace("$char".toRegex(), translitMap.getValue(char))
 
-            }
-
-        }
-
-        return processedString.replace(" ", divider)
+        return builder.toString().replace(" ", divider)
 
     }
 
 
 
-    fun toInitials(firstName: String?, lastName: String?) : String? {
+    private fun getTranslChar(char: Char, map: HashMap<Char, String>): String {
 
-        if (firstName?.trim().isNullOrBlank() && lastName?.trim().isNullOrBlank())
+        val transl  = map[char.toLowerCase()] ?: char.toString()
 
-            return null
 
-        val firstInitial = firstName?.trim()?.get(0)?.toUpperCase() ?: ""
 
-        val secondInitial = lastName?.trim()?.get(0)?.toUpperCase() ?: ""
+        return if (char.isUpperCase() && transl.isNotEmpty())
 
-        return "$firstInitial$secondInitial"
+            transl.capitalize()
+
+        else transl
+
+    }
+
+
+
+    private fun fillTranslitMap(): HashMap<Char, String> {
+
+        val map = hashMapOf<Char, String>()
+
+        map['а'] = "a"
+
+        map['б'] = "b"
+
+        map['в'] = "v"
+
+        map['г'] = "g"
+
+        map['д'] = "d"
+
+        map['е'] = "e"
+
+        map['ё'] = "e"
+
+        map['ж'] = "zh"
+
+        map['з'] = "z"
+
+        map['и'] = "i"
+
+        map['й'] = "i"
+
+        map['к'] = "k"
+
+        map['л'] = "l"
+
+        map['м'] = "m"
+
+        map['н'] = "n"
+
+        map['о'] = "o"
+
+        map['п'] = "p"
+
+        map['р'] = "r"
+
+        map['с'] = "s"
+
+        map['т'] = "t"
+
+        map['у'] = "u"
+
+        map['ф'] = "f"
+
+        map['х'] = "h"
+
+        map['ц'] = "c"
+
+        map['ч'] = "ch"
+
+        map['ш'] = "sh"
+
+        map['щ'] = "sh'"
+
+        map['ъ'] = ""
+
+        map['ы'] = "i"
+
+        map['ь'] = ""
+
+        map['э'] = "e"
+
+        map['ю'] = "yu"
+
+        map['я'] = "ya"
+
+
+
+        return map
+
+    }
+
+
+
+    fun toInitials(firstName: String?, lastName: String?): String? {
+
+        val name = firstName.orEmpty().trim().getOrNull(0)?.toUpperCase()
+
+        val surname = lastName.orEmpty().trim().getOrNull(0)?.toUpperCase()
+
+        val firstInit = name?.toString() ?: ""
+
+        val secondInit = surname?.toString() ?: ""
+
+        return "$firstInit$secondInit".ifEmpty { null }
+
+    }
+
+
+
+    fun convertPxToDp(context: Context, px: Int): Int {
+
+        val scale = context.resources.displayMetrics.density
+
+        return (px / scale + 0.5f).toInt()
+
+    }
+
+
+
+    fun convertDpToPx(context: Context, dp: Int): Int {
+
+        val scale = context.resources.displayMetrics.density
+
+        return (dp * scale + 0.5f).toInt()
+
+    }
+
+
+
+    fun convertSpToPx(context: Context, sp: Int): Int {
+
+        return sp * context.resources.displayMetrics.scaledDensity.toInt()
 
     }
 
