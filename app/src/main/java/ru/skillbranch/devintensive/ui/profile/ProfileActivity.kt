@@ -8,7 +8,6 @@ import android.graphics.ColorFilter
 import android.graphics.PorterDuff
 
 import android.graphics.PorterDuffColorFilter
-import android.os.Build
 
 import android.os.Bundle
 
@@ -21,7 +20,6 @@ import android.view.View
 import android.widget.EditText
 
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 
 import androidx.appcompat.app.AppCompatActivity
 
@@ -35,8 +33,10 @@ import ru.skillbranch.devintensive.R
 
 import ru.skillbranch.devintensive.models.Profile
 
+import ru.skillbranch.devintensive.utils.Utils
 
 import ru.skillbranch.devintensive.viewmodels.ProfileViewModel
+
 
 
 class ProfileActivity : AppCompatActivity() {
@@ -59,7 +59,6 @@ class ProfileActivity : AppCompatActivity() {
 
 
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
 
         setTheme(R.style.AppTheme)
@@ -130,11 +129,12 @@ class ProfileActivity : AppCompatActivity() {
 
         }
 
+        updateAvatar(profile)
+
     }
 
 
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun initViews(savedInstanceState: Bundle?) {
 
         viewFields = mapOf(
@@ -205,7 +205,6 @@ class ProfileActivity : AppCompatActivity() {
 
 
 
-    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun showCurrentMode(isEdit: Boolean) {
 
         val info = viewFields.filter {
@@ -280,13 +279,25 @@ class ProfileActivity : AppCompatActivity() {
 
             about = et_about.text.toString(),
 
-            repository = et_repository.text.toString().trim()
+            repository = et_repository.text.toString()
 
         ).apply {
 
             viewModel.saveProfileData(this)
 
         }
+
+    }
+
+
+
+    private fun updateAvatar(profile: Profile){
+
+        val initials = Utils.toInitials(profile.firstName, profile.lastName)
+
+        iv_avatar.generateAvatar(initials, Utils.convertSpToPx(this, 48), theme)
+
+
 
     }
 

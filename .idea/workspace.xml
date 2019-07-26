@@ -11,7 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c537b793-c428-4a6e-8053-7e6fbd632d23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
@@ -61,7 +63,38 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="313" column="1" lean-forward="true" selection-start-line="313" selection-start-column="1" selection-end-line="313" selection-end-column="1" />
+              <folding>
+                <element signature="e#51#738#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,11 +141,9 @@
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/models/TextMessage.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/models/User.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/models/UserView.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/repositories/PreferenceRepository.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/AspectRatioImageView.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/utils/Utils.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/viewmodels/ProfileViewModel.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_contraint.xml" />
@@ -124,13 +155,15 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-night/ic_switch_day_night.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_save_black_24dp.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_switch_day_night.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/avatar_default.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_avatar.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_about.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_repo.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt" />
       </list>
     </option>
   </component>
@@ -151,6 +184,105 @@
             <path>
               <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
               <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="skillbranch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="skillbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="devintensive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="skillbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="devintensive" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="skillbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="devintensive" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="skillbranch" type="462c0819:PsiDirectoryNode" />
+              <item name="devintensive" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dev-intensive-2019" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dev-intensive-2019" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -305,9 +437,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.33055976" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.33055976" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -315,9 +448,9 @@
       <window_info id="Resources Explorer" order="6" weight="0.32980332" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info active="true" id="Terminal" order="9" visible="true" weight="0.811649" />
+      <window_info id="Terminal" order="9" weight="0.811649" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Logcat" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3289689" />
       <window_info anchor="bottom" id="Android Profiler" order="3" />
       <window_info anchor="bottom" id="Event Log" order="4" side_tool="true" />
@@ -335,6 +468,18 @@
       <window_info anchor="right" id="Coverage" order="7" side_tool="true" weight="0.32980332" />
       <window_info anchor="right" id="Assistant" order="8" weight="0.32980332" />
     </layout>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt</url>
+          <line>5</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/androidTest/java/ru/skillbranch/devintensive/Task7.kt" />
@@ -532,16 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
-          <folding>
-            <element signature="e#24#206#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/models/UserView.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -572,15 +707,6 @@
         <state>
           <folding>
             <element signature="e#47#182#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#46#446#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -686,16 +812,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="302" column="1" selection-start-line="302" selection-start-column="1" selection-end-line="302" selection-end-column="1" />
-          <folding>
-            <element signature="e#51#740#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_save_black_24dp.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -714,6 +830,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="262">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/App.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/profile/ProfileActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="313" column="1" lean-forward="true" selection-start-line="313" selection-start-column="1" selection-end-line="313" selection-end-column="1" />
+          <folding>
+            <element signature="e#51#738#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ru/skillbranch/devintensive/ui/custom/CircleImageView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
