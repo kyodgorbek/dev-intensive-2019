@@ -15,6 +15,8 @@ import android.text.Editable
 
 import android.text.TextWatcher
 
+import android.util.TypedValue
+
 import android.view.View
 
 import android.widget.EditText
@@ -241,7 +243,7 @@ class ProfileActivity : AppCompatActivity() {
 
             val filter: ColorFilter? = if (isEdit){
 
-                PorterDuffColorFilter(resources.getColor(R.color.color_accent, theme), PorterDuff.Mode.SRC_IN)
+                PorterDuffColorFilter(getThemeAccentColor(), PorterDuff.Mode.SRC_IN)
 
             }
 
@@ -264,6 +266,18 @@ class ProfileActivity : AppCompatActivity() {
             setImageDrawable(icon)
 
         }
+
+    }
+
+
+
+    private fun getThemeAccentColor(): Int {
+
+        val value = TypedValue()
+
+        theme.resolveAttribute(R.attr.colorAccent, value, true)
+
+        return value.data
 
     }
 
