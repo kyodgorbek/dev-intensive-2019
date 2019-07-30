@@ -29,6 +29,11 @@ import ru.skillbranch.devintensive.R
 import ru.skillbranch.devintensive.utils.Utils
 
 import kotlin.math.min
+
+
+
+
+
 class CircleImageView @JvmOverloads constructor (
 
     context: Context,
@@ -115,23 +120,27 @@ class CircleImageView @JvmOverloads constructor (
 
     override fun onDraw(canvas: Canvas) {
 
-        val bitmap = getBitmapFromDrawable() ?: return
+        var bitmap = getBitmapFromDrawable() ?: return
 
         if (width == 0 || height == 0) return
 
 
 
-        val scaledBmp = getScaledBitmap(bitmap, width)
+        bitmap = getScaledBitmap(bitmap, width)
 
-        val croppedBmp = getCenterCroppedBitmap(scaledBmp, width)
+        bitmap = getCenterCroppedBitmap(bitmap, width)
 
-        val circleBmp = getCircleBitmap(croppedBmp)
-
-        val strokedBmp = getStrokedBitmap(circleBmp, borderWidth, borderColor)
+        bitmap = getCircleBitmap(bitmap)
 
 
 
-        canvas.drawBitmap(strokedBmp, 0F, 0F, null)
+        if (borderWidth > 0)
+
+            bitmap = getStrokedBitmap(bitmap, borderWidth, borderColor)
+
+
+
+        canvas.drawBitmap(bitmap, 0F, 0F, null)
 
     }
 
@@ -158,6 +167,8 @@ class CircleImageView @JvmOverloads constructor (
             this.text = text
 
             bitmap = image
+
+            //setImageBitmap(bitmap)
 
             invalidate()
 
@@ -216,6 +227,8 @@ class CircleImageView @JvmOverloads constructor (
         val color = TypedValue()
 
         theme.resolveAttribute(R.attr.colorAccent, color, true)
+
+
 
 
 
@@ -372,4 +385,5 @@ class CircleImageView @JvmOverloads constructor (
     }
 
 }
+
 

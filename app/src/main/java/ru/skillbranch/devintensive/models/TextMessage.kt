@@ -4,19 +4,20 @@ import ru.skillbranch.devintensive.extensions.humanizeDiff
 import java.util.*
 
 
+
 class TextMessage(
 
-id: String,
+    id: String,
 
-from: User?,
+    from: User?,
 
-chat: Chat,
+    chat: Chat,
 
-isIncoming: Boolean = false,
+    isIncoming: Boolean = false,
 
-date : Date = Date(),
+    date : Date = Date(),
 
-var text: String?
+    var text: String?
 
 
 

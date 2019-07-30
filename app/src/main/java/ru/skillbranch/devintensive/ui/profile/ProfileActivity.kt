@@ -311,8 +311,6 @@ class ProfileActivity : AppCompatActivity() {
 
         iv_avatar.generateAvatar(initials, Utils.convertSpToPx(this, 48), theme)
 
-
-
     }
 
 

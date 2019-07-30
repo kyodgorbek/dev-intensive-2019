@@ -1,9 +1,6 @@
 package ru.skillbranch.devintensive.models
 
 import ru.skillbranch.devintensive.extensions.humanizeDiff
-import java.util.*
-
-import ru.skillbranch.devintensive.extensions.humanizeDiff
 
 import java.util.*
 
