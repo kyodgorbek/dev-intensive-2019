@@ -58,8 +58,6 @@ class CircleImageView @JvmOverloads constructor (
 
     private var text: String? = null
 
-    private var bitmap: Bitmap? = null
-
 
 
     init {
@@ -118,6 +116,7 @@ class CircleImageView @JvmOverloads constructor (
 
 
 
+
     override fun onDraw(canvas: Canvas) {
 
         var bitmap = getBitmapFromDrawable() ?: return
@@ -150,7 +149,7 @@ class CircleImageView @JvmOverloads constructor (
 
         /* don't render if initials haven't changed */
 
-        if (bitmap == null || text != this.text){
+        if (text != this.text){
 
             val image =
 
@@ -166,11 +165,7 @@ class CircleImageView @JvmOverloads constructor (
 
             this.text = text
 
-            bitmap = image
-
-            //setImageBitmap(bitmap)
-
-            invalidate()
+            setImageBitmap(image)
 
         }
 
@@ -311,12 +306,6 @@ class CircleImageView @JvmOverloads constructor (
 
 
     private fun getBitmapFromDrawable(): Bitmap? {
-
-        if (bitmap != null)
-
-            return bitmap
-
-
 
         if (drawable == null)
 
